@@ -78,6 +78,9 @@
             font-weight: normal;
         }
     </style>
+
+    <!-- Include the model-viewer library -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <h1>CLICKER GAME</h1>
@@ -95,6 +98,16 @@
     <button class="upgrade" id="auto-upgrade">
         Auto-Clicker (+<span id="auto-value">1</span>/sec) - Cost: <span id="auto-cost">50</span> - Owned: <span id="auto-owned">0</span>
     </button>
+
+    <!-- 3D Model Embed -->
+    <model-viewer 
+        src="https://raw.githubusercontent.com/Besratfikre/Robotics-2026-Q1/main/games/Untitled%201721006-Mesh%202013410.glb"
+        alt="3D Model of Clicker Game Asset"
+        auto-rotate 
+        camera-controls 
+        ar
+        style="width: 600px; height: 400px; display: block; margin: 20px auto;">
+    </model-viewer>
 
     <script>
         // Game variables
@@ -146,7 +159,7 @@
                 autoClickerOwned += 1;
 
                 // Optional: increase strength per auto-clicker
-                autoClickerValue = 1; // keep 1 each, or change to grow if you want
+                autoClickerValue = 1;
 
                 // Increase cost for next auto-clicker
                 autoClickerCost = Math.floor(autoClickerCost * 1.2);
